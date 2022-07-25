@@ -1,0 +1,19 @@
+import random
+import matplotlib.pyplot as plt
+
+def pets(options, choices, trials):
+    new_pets = []
+    counts = []
+    for i in range(trials):
+        for n in range(choices):
+            new_pets.append(random.choice(options))
+    for j in range(len(options)):
+        counts.append(new_pets.count(options[j]))
+    plt.bar(options, counts, width = 0.7)
+    plt.xlabel('Monsters')
+    plt.xticks(rotation = 25)
+    plt.ylabel('Occurences')
+    plt.show
+    return('new_pets', counts, len(new_pets))
+
+pets(['dog', 'cat', 'fish', 'rock', 'turtle', 'tarantula', 'digipet', 'bird', 'baby'], 5, 20)
